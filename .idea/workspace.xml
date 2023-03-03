@@ -4,20 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97a628b3-5c49-45a9-a46d-07ec12504654" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/frizzer/ballsort/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/frizzer/ballsort/entity/Ball.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/frizzer/ballsort/entity/BasketballBall.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/frizzer/ballsort/entity/Color.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/frizzer/ballsort/entity/FootballBall.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/frizzer/ballsort/entity/TennisBall.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/frizzer/ballsort/entity/VolleyballBall.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/frizzer/ballsort/factory/BallFactory.java" afterDir="false" />
+    <list default="true" id="97a628b3-5c49-45a9-a46d-07ec12504654" name="Changes" comment="Initial commit. Done - basic structure and Color.java/BallFactory.java classes">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +35,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "WebServerToolWindowFactoryState": "false"
   }
 }]]></component>
@@ -78,8 +68,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1677863347330</updated>
-      <workItem from="1677863348669" duration="1356000" />
+      <workItem from="1677863348669" duration="1797000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial commit. Done - basic structure and Color.java/BallFactory.java classes">
+      <created>1677865019499</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1677865019499</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -95,5 +93,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit. Done - basic structure and Color.java/BallFactory.java classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit. Done - basic structure and Color.java/BallFactory.java classes" />
   </component>
 </project>
