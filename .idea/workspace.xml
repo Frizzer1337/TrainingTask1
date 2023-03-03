@@ -5,7 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97a628b3-5c49-45a9-a46d-07ec12504654" name="Changes" comment="Initial commit. Done - basic structure and Color.java/BallFactory.java classes">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/frizzer/ballsort/entity/BallType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/frizzer/ballsort/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/frizzer/ballsort/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/frizzer/ballsort/entity/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/frizzer/ballsort/entity/Ball.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/frizzer/ballsort/entity/BasketballBall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/frizzer/ballsort/entity/BasketballBall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/frizzer/ballsort/entity/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/frizzer/ballsort/entity/Color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/frizzer/ballsort/entity/FootballBall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/frizzer/ballsort/entity/FootballBall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/frizzer/ballsort/entity/TennisBall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/frizzer/ballsort/entity/TennisBall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/frizzer/ballsort/entity/VolleyballBall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/frizzer/ballsort/entity/VolleyballBall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/frizzer/ballsort/factory/BallFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/frizzer/ballsort/service/SortService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/frizzer/ballsort/service/SortService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +27,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -68,7 +80,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1677863347330</updated>
-      <workItem from="1677863348669" duration="1797000" />
+      <workItem from="1677863348669" duration="3957000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit. Done - basic structure and Color.java/BallFactory.java classes">
       <created>1677865019499</created>
@@ -77,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677865019499</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Initial commit. Done - basic structure and Color.java/BallFactory.java classes">
+      <created>1677865238578</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1677865238578</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

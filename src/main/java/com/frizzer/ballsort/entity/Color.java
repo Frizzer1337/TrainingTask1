@@ -5,6 +5,11 @@ public class Color implements Comparable<Color> {
   private String name;
   private String tone;
 
+  public Color(String name, String tone) {
+    this.name = name;
+    this.tone = tone;
+  }
+
   public String getName() {
     return name;
   }
