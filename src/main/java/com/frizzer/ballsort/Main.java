@@ -23,7 +23,7 @@ public class Main {
     balls.add(basketBall2);
 
     balls.forEach(System.out::println);
-    sortService.byType().mergeSort(balls);
+    sortService.byType().oddEvenSort(balls);
     System.out.println(balls);
 
   }
