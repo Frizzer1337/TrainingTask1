@@ -9,38 +9,36 @@ import java.util.Comparator;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
-
-class MergeSortTest extends AbstractTest {
+class QuickSortTest extends AbstractTest{
 
   @Test
-  void testMergeSortBySize() {
+  void testQuickSortBySize() {
     List<Ball> balls = new ArrayList<>(ballsTestSet);
     List<Ball> ballsSortedByJava = new ArrayList<>(ballsTestSet);
-    sortService.bySize().mergeSort(balls);
+    sortService.bySize().quickSort(balls);
     ballsSortedByJava.sort(Comparator.comparing(Ball::getSize));
     assertThat(balls.stream().map(Ball::getSize).toList(),
         is(ballsSortedByJava.stream().map(Ball::getSize).toList()));
   }
 
   @Test
-  void testMergeSortByColor() {
+  void testQuickSortByColor() {
     List<Ball> balls = new ArrayList<>(ballsTestSet);
     List<Ball> ballsSortedByJava = new ArrayList<>(ballsTestSet);
-    sortService.byColor().mergeSort(balls);
+    sortService.byColor().quickSort(balls);
     ballsSortedByJava.sort(Comparator.comparing(Ball::getColor));
     assertThat(balls.stream().map(Ball::getColor).toList(),
         is(ballsSortedByJava.stream().map(Ball::getColor).toList()));
   }
 
   @Test
-  void testMergeSortByType() {
+  void testQuickSortByType() {
     List<Ball> balls = new ArrayList<>(ballsTestSet);
     List<Ball> ballsSortedByJava = new ArrayList<>(ballsTestSet);
-    sortService.byType().mergeSort(balls);
+    sortService.byType().quickSort(balls);
     ballsSortedByJava.sort(Comparator.comparing(Ball::getType));
     assertThat(balls.stream().map(Ball::getType).toList(),
         is(ballsSortedByJava.stream().map(Ball::getType).toList()));
   }
-
 
 }

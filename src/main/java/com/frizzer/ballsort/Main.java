@@ -24,7 +24,7 @@ public class Main {
     balls.add(basketBall2);
 
     balls.forEach(System.out::println);
-    sortService.byType().mergeSort(balls);
+    sortService.bySize().quickSort(balls);
     System.out.println("After sort");
     balls.forEach(System.out::println);
 

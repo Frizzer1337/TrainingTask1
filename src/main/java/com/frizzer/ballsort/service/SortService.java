@@ -2,6 +2,7 @@ package com.frizzer.ballsort.service;
 
 import com.frizzer.ballsort.entity.Ball;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class SortService {
@@ -25,8 +26,8 @@ public class SortService {
 
   public List<Ball> mergeSort(List<Ball> balls) {
 
-    List<Ball> left = new ArrayList<Ball>();
-    List<Ball> right = new ArrayList<Ball>();
+    List<Ball> left = new ArrayList<>();
+    List<Ball> right = new ArrayList<>();
     int center;
 
     if (balls.size() == 1) {
@@ -92,6 +93,32 @@ public class SortService {
       wholeIndex++;
     }
   }
+
+  public void quickSort(List<Ball> list){
+    quickSort(list,0,list.size()-1);
+  }
+
+  public void quickSort(List<Ball> list, int begin, int end) {
+    if (begin < end) {
+      int partitionIndex = partition(list, begin, end);
+      quickSort(list, begin, partitionIndex-1);
+      quickSort(list, partitionIndex+1, end);
+    }
+  }
+
+  private int partition(List<Ball> list, int begin, int end) {
+    Ball pivot = list.get(end);
+    int i = (begin-1);
+    for (int j = begin; j < end; j++) {
+      if (compare(list.get(j),pivot) <= 0) {
+        i++;
+        Collections.swap(list,i,j);
+      }
+    }
+    Collections.swap(list,i+1,end);
+    return i+1;
+  }
+
 }
 
 enum SortBy {
