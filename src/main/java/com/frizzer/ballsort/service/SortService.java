@@ -94,29 +94,62 @@ public class SortService {
     }
   }
 
-  public void quickSort(List<Ball> list){
-    quickSort(list,0,list.size()-1);
+  public void quickSort(List<Ball> list) {
+    quickSort(list, 0, list.size() - 1);
   }
 
   public void quickSort(List<Ball> list, int begin, int end) {
     if (begin < end) {
       int partitionIndex = partition(list, begin, end);
-      quickSort(list, begin, partitionIndex-1);
-      quickSort(list, partitionIndex+1, end);
+      quickSort(list, begin, partitionIndex - 1);
+      quickSort(list, partitionIndex + 1, end);
     }
   }
 
   private int partition(List<Ball> list, int begin, int end) {
     Ball pivot = list.get(end);
-    int i = (begin-1);
+    int i = (begin - 1);
     for (int j = begin; j < end; j++) {
-      if (compare(list.get(j),pivot) <= 0) {
+      if (compare(list.get(j), pivot) <= 0) {
         i++;
-        Collections.swap(list,i,j);
+        Collections.swap(list, i, j);
       }
     }
-    Collections.swap(list,i+1,end);
-    return i+1;
+    Collections.swap(list, i + 1, end);
+    return i + 1;
+  }
+
+
+  public void heapSort(List<Ball> list) {
+    int n = list.size();
+
+    for (int i = n / 2 - 1; i >= 0; i--) {
+      heapify(list, n, i);
+    }
+
+    for (int i = n - 1; i > 0; i--) {
+      Collections.swap(list, i, 0);
+      heapify(list, i, 0);
+    }
+  }
+
+  void heapify(List<Ball> list, int n, int i) {
+    int largest = i;
+    int l = 2 * i + 1;
+    int r = 2 * i + 2;
+
+    if (l < n && compare(list.get(l), list.get(largest)) > 0) {
+      largest = l;
+    }
+
+    if (r < n && compare(list.get(r), list.get(largest)) > 0) {
+      largest = r;
+    }
+
+    if (largest != i) {
+      Collections.swap(list, i, largest);
+      heapify(list, n, largest);
+    }
   }
 
 }

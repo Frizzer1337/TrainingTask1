@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-
   public static void main(String[] args) {
     System.out.println("Сюда даже смотреть не будут");
     SortService sortService = new SortService();
@@ -24,11 +23,9 @@ public class Main {
     balls.add(basketBall2);
 
     balls.forEach(System.out::println);
-    sortService.bySize().quickSort(balls);
+    sortService.bySize().heapSort(balls);
     System.out.println("After sort");
     balls.forEach(System.out::println);
-
-
 
   }
 }
