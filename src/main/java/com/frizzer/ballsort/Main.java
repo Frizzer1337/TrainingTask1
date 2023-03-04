@@ -15,7 +15,7 @@ public class Main {
     System.out.println("Сюда даже смотреть не будут");
     SortService sortService = new SortService();
     Ball basketBall = new BasketballBall(12,new Color("red","deep"), BallType.BASKETBALL);
-    Ball basketBall1 = new BasketballBall(15,new Color("red","deer"), BallType.BASKETBALL);
+    Ball basketBall1 = new BasketballBall(15,new Color("green","deer"), BallType.BASKETBALL);
     Ball basketBall2 = new FootballBall(10,new Color("red","dek"), BallType.FOOTBALL);
     List<Ball> balls= new ArrayList<>();
     balls.add(basketBall);
@@ -23,9 +23,8 @@ public class Main {
     balls.add(basketBall2);
 
     balls.forEach(System.out::println);
-    sortService.bySize().heapSort(balls);
-    System.out.println("After sort");
-    balls.forEach(System.out::println);
+    sortService.byType().mergeSort(balls);
+    System.out.println(balls);
 
   }
 }

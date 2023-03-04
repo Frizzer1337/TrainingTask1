@@ -24,30 +24,7 @@ public class SortService {
     return this;
   }
 
-  public List<Ball> mergeSort(List<Ball> balls) {
-
-    List<Ball> left = new ArrayList<>();
-    List<Ball> right = new ArrayList<>();
-    int center;
-
-    if (balls.size() == 1) {
-      return balls;
-    } else {
-      center = balls.size() / 2;
-      for (int i = 0; i < center; i++) {
-        left.add(balls.get(i));
-      }
-      for (int i = center; i < balls.size(); i++) {
-        right.add(balls.get(i));
-      }
-      left = mergeSort(left);
-      right = mergeSort(right);
-      merge(left, right, balls);
-    }
-    return balls;
-  }
-
-  public int compare(Ball leftBall, Ball rightBall) {
+  private int compare(Ball leftBall, Ball rightBall) {
     switch (sortBy) {
       case SIZE -> {
         return leftBall.getSize() - rightBall.getSize();
@@ -62,43 +39,64 @@ public class SortService {
     return 0;
   }
 
-  public void merge(List<Ball> left, List<Ball> right, List<Ball> balls) {
+  public SortService mergeSort(List<Ball> list) {
+    mergeSortRealization(list);
+    return this;
+  }
+
+  private void mergeSortRealization(List<Ball> list) {
+    List<Ball> left = new ArrayList<>();
+    List<Ball> right = new ArrayList<>();
+    int center;
+    if (list.size() != 1) {
+      center = list.size() / 2;
+      for (int i = 0; i < center; i++) {
+        left.add(list.get(i));
+      }
+      for (int i = center; i < list.size(); i++) {
+        right.add(list.get(i));
+      }
+      mergeSortRealization(left);
+      mergeSortRealization(right);
+      merge(left, right, list);
+    }
+  }
+
+  private void merge(List<Ball> left, List<Ball> right, List<Ball> list) {
     int leftIndex = 0;
     int rightIndex = 0;
-    int wholeIndex = 0;
+    int originalIndex = 0;
 
     while (leftIndex < left.size() && rightIndex < right.size()) {
+
       if (compare(left.get(leftIndex), right.get(rightIndex)) < 0) {
-        balls.set(wholeIndex, left.get(leftIndex));
+        list.set(originalIndex, left.get(leftIndex));
         leftIndex++;
       } else {
-        balls.set(wholeIndex, right.get(rightIndex));
+        list.set(originalIndex, right.get(rightIndex));
         rightIndex++;
       }
-      wholeIndex++;
+      originalIndex++;
     }
 
-    List<Ball> rest;
-    int restIndex;
-    if (leftIndex >= left.size()) {
-      rest = right;
-      restIndex = rightIndex;
-    } else {
-      rest = left;
-      restIndex = leftIndex;
+    while (leftIndex < left.size()) {
+      list.set(originalIndex, left.get(leftIndex));
+      originalIndex++;
+      leftIndex++;
     }
-
-    for (int i = restIndex; i < rest.size(); i++) {
-      balls.set(wholeIndex, rest.get(i));
-      wholeIndex++;
+    while (rightIndex < right.size()) {
+      list.set(originalIndex, right.get(rightIndex));
+      originalIndex++;
+      rightIndex++;
     }
   }
 
-  public void quickSort(List<Ball> list) {
+  public SortService quickSort(List<Ball> list) {
     quickSort(list, 0, list.size() - 1);
+    return this;
   }
 
-  public void quickSort(List<Ball> list, int begin, int end) {
+  private void quickSort(List<Ball> list, int begin, int end) {
     if (begin < end) {
       int partitionIndex = partition(list, begin, end);
       quickSort(list, begin, partitionIndex - 1);
@@ -120,7 +118,7 @@ public class SortService {
   }
 
 
-  public void heapSort(List<Ball> list) {
+  public SortService heapSort(List<Ball> list) {
     int n = list.size();
 
     for (int i = n / 2 - 1; i >= 0; i--) {
@@ -131,9 +129,10 @@ public class SortService {
       Collections.swap(list, i, 0);
       heapify(list, i, 0);
     }
+    return this;
   }
 
-  void heapify(List<Ball> list, int n, int i) {
+  private void heapify(List<Ball> list, int n, int i) {
     int largest = i;
     int l = 2 * i + 1;
     int r = 2 * i + 2;
