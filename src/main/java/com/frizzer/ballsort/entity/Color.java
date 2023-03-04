@@ -53,7 +53,7 @@ public class Color implements Comparable<Color> {
 
   @Override
   public int compareTo(Color o) {
-    return name.compareTo(o.name) == 0 ? 0 : tone.compareTo(o.tone);
+    return name.compareTo(o.name) != 0 ? name.compareTo(o.name) : tone.compareTo(o.tone);
   }
 
   @Override

@@ -13,6 +13,7 @@ import java.util.List;
 public class Main {
 
   public static void main(String[] args) {
+    System.out.println("Сюда даже смотреть не будут");
     SortService sortService = new SortService();
     Ball basketBall = new BasketballBall(12,new Color("red","deep"), BallType.BASKETBALL);
     Ball basketBall1 = new BasketballBall(15,new Color("red","deer"), BallType.BASKETBALL);
