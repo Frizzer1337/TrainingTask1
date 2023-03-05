@@ -24,6 +24,8 @@ public class SortService {
     return this;
   }
 
+
+
   private int compare(Ball leftBall, Ball rightBall) {
     switch (sortBy) {
       case SIZE -> {
@@ -172,10 +174,4 @@ public class SortService {
     }
     return this;
   }
-}
-
-enum SortBy {
-  SIZE,
-  COLOR,
-  TYPE
 }

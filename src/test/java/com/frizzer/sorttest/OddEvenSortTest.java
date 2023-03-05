@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 class OddEvenSortTest extends AbstractTest {
 
   @Test
-  void testQuickSortBySize() {
+  void testOddEvenSortBySize() {
     List<Ball> balls = new ArrayList<>(ballsTestSet);
     List<Ball> ballsSortedByJava = new ArrayList<>(ballsTestSet);
     sortService.bySize().oddEvenSort(balls);
@@ -22,7 +22,7 @@ class OddEvenSortTest extends AbstractTest {
   }
 
   @Test
-  void testQuickSortByColor() {
+  void testOddEvenSortByColor() {
     List<Ball> balls = new ArrayList<>(ballsTestSet);
     List<Ball> ballsSortedByJava = new ArrayList<>(ballsTestSet);
     sortService.byColor().oddEvenSort(balls);
@@ -32,7 +32,7 @@ class OddEvenSortTest extends AbstractTest {
   }
 
   @Test
-  void testQuickSortByType() {
+  void testOddEvenSortByType() {
     List<Ball> balls = new ArrayList<>(ballsTestSet);
     List<Ball> ballsSortedByJava = new ArrayList<>(ballsTestSet);
     sortService.byType().oddEvenSort(balls);
