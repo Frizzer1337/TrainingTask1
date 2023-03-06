@@ -1,22 +1,17 @@
 package com.frizzer.ballsort.entity;
 
-public abstract class Ball{
-  private int size;
-  private Color color;
-  private BallType type;
+public abstract class Ball {
 
-  protected Ball(int size, Color color,BallType type){
-    this.size = size;
-    this.color = color;
+  protected int size;
+  protected Color color;
+  protected BallType type;
+
+  protected Ball(BallType type) {
     this.type = type;
   }
 
   public int getSize() {
     return size;
-  }
-
-  public void setSize(int size) {
-    this.size = size;
   }
 
   public Color getColor() {
@@ -31,9 +26,6 @@ public abstract class Ball{
     return type;
   }
 
-  public void setType(BallType type) {
-    this.type = type;
-  }
 
 
   @Override

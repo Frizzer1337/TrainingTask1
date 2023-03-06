@@ -2,7 +2,6 @@ package com.frizzer.ballsort;
 
 
 import com.frizzer.ballsort.entity.Ball;
-import com.frizzer.ballsort.entity.BallType;
 import com.frizzer.ballsort.entity.BasketballBall;
 import com.frizzer.ballsort.entity.Color;
 import com.frizzer.ballsort.entity.FootballBall;
@@ -14,9 +13,9 @@ public class Main {
   public static void main(String[] args) {
     System.out.println("Сюда даже смотреть не будут");
     SortService sortService = new SortService();
-    Ball basketBall = new BasketballBall(12,new Color("red","deep"), BallType.BASKETBALL);
-    Ball basketBall1 = new BasketballBall(15,new Color("green","deer"), BallType.BASKETBALL);
-    Ball basketBall2 = new FootballBall(10,new Color("red","dek"), BallType.FOOTBALL);
+    Ball basketBall = new BasketballBall(12,new Color("red","deep"));
+    Ball basketBall1 = new BasketballBall(15,new Color("green","deer"));
+    Ball basketBall2 = new FootballBall(10,new Color("red","dek"));
     List<Ball> balls= new ArrayList<>();
     balls.add(basketBall);
     balls.add(basketBall1);
