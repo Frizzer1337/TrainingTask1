@@ -10,13 +10,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
+
   public static void main(String[] args) {
     System.out.println("Сюда даже смотреть не будут");
     SortService sortService = new SortService();
-    Ball basketBall = new BasketballBall(12,new Color("red","deep"));
-    Ball basketBall1 = new BasketballBall(15,new Color("green","deer"));
-    Ball basketBall2 = new FootballBall(10,new Color("red","dek"));
-    List<Ball> balls= new ArrayList<>();
+    Ball basketBall = new BasketballBall(12, new Color("red", "deep"));
+    Ball basketBall1 = new BasketballBall(15, new Color("green", "deer"));
+    Ball basketBall2 = new FootballBall(10, new Color("red", "dek"));
+    List<Ball> balls = new ArrayList<>();
     balls.add(basketBall);
     balls.add(basketBall1);
     balls.add(basketBall2);

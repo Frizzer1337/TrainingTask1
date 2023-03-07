@@ -7,6 +7,7 @@ public class FootballBall extends Ball {
     this.color = color;
     this.size = size;
   }
+
   @Override
   public String toString() {
     return "FootballBall{" +

@@ -10,32 +10,17 @@ import org.apache.logging.log4j.Logger;
 
 public class OddEvenParallelThread implements Runnable {
 
+  private static final Logger logger = LogManager.getLogger();
   private final List<Ball> list;
   private final int index;
   private final CyclicBarrier barrier;
-  private SortBy sortBy = SortBy.SIZE;
+  private final SortBy sortBy;
 
-  private static Logger logger = LogManager.getLogger();
-
-  public OddEvenParallelThread(List<Ball> list, int index, CyclicBarrier barrier) {
+  public OddEvenParallelThread(List<Ball> list, int index, CyclicBarrier barrier, SortBy sortBy) {
     this.list = list;
     this.index = index;
     this.barrier = barrier;
-  }
-
-  public OddEvenParallelThread bySize() {
-    sortBy = SortBy.SIZE;
-    return this;
-  }
-
-  public OddEvenParallelThread byColor() {
-    sortBy = SortBy.COLOR;
-    return this;
-  }
-
-  public OddEvenParallelThread byType() {
-    sortBy = SortBy.TYPE;
-    return this;
+    this.sortBy = sortBy;
   }
 
   private int compare(Ball leftBall, Ball rightBall) {

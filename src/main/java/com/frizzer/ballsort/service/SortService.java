@@ -4,9 +4,17 @@ import com.frizzer.ballsort.entity.Ball;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class SortService {
 
+  private static final Logger logger = LogManager.getLogger();
   private SortBy sortBy = SortBy.SIZE;
 
   public SortService bySize() {
@@ -25,7 +33,6 @@ public class SortService {
   }
 
 
-
   private int compare(Ball leftBall, Ball rightBall) {
     switch (sortBy) {
       case SIZE -> {
@@ -39,6 +46,25 @@ public class SortService {
       }
     }
     return 0;
+  }
+
+  public SortService parallelOddEvenSort(List<Ball> list) {
+    int threadAmount = list.size() / 2;
+    CyclicBarrier barrier = new CyclicBarrier(threadAmount);
+    ExecutorService executor = Executors.newFixedThreadPool(threadAmount);
+    Future<?>[] awaits = new Future<?>[threadAmount];
+    for (int i = 0; i < threadAmount; i++) {
+      awaits[i] = executor.submit(new OddEvenParallelThread(list, 2 * i + 1, barrier, this.sortBy));
+    }
+    for (int i = 0; i < threadAmount; i++) {
+      try {
+        awaits[i].get();
+      } catch (InterruptedException | ExecutionException e) {
+        logger.error(e);
+        Thread.currentThread().interrupt();
+      }
+    }
+    return this;
   }
 
   public SortService mergeSort(List<Ball> list) {
@@ -153,7 +179,7 @@ public class SortService {
     }
   }
 
-  public SortService oddEvenSort(List<Ball> list){
+  public SortService oddEvenSort(List<Ball> list) {
     boolean sorted = false;
     int n = list.size();
     while (!sorted) {

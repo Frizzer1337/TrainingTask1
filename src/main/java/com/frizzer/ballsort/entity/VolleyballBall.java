@@ -1,6 +1,6 @@
 package com.frizzer.ballsort.entity;
 
-public class VolleyballBall extends Ball{
+public class VolleyballBall extends Ball {
 
   public VolleyballBall(int size, Color color) {
     super(BallType.VOLLEYBALL);

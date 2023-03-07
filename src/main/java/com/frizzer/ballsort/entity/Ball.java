@@ -27,7 +27,6 @@ public abstract class Ball {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {

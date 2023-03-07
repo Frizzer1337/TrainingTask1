@@ -9,7 +9,7 @@ import java.util.Comparator;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
-class QuickSortTest extends AbstractTest{
+class QuickSortTest extends AbstractTest {
 
   @Test
   void testQuickSortBySize() {

@@ -9,7 +9,7 @@ import java.util.Comparator;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
-class HeapSortTest extends AbstractTest{
+class HeapSortTest extends AbstractTest {
 
   @Test
   void testHeapSortBySize() {
