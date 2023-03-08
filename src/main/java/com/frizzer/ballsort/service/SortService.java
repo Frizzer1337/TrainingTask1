@@ -54,7 +54,8 @@ public class SortService {
     ExecutorService executor = Executors.newFixedThreadPool(threadAmount);
     Future<?>[] awaits = new Future<?>[threadAmount];
     for (int i = 0; i < threadAmount; i++) {
-      awaits[i] = executor.submit(new OddEvenParallelThread(list, 2 * i + 1, barrier, this.sortBy));
+      int splitIndex = 2 * i + 1;
+      awaits[i] = executor.submit(new OddEvenParallelThread(list, splitIndex, barrier, this.sortBy));
     }
     for (int i = 0; i < threadAmount; i++) {
       try {
@@ -150,17 +151,17 @@ public class SortService {
     int n = list.size();
 
     for (int i = n / 2 - 1; i >= 0; i--) {
-      heapify(list, n, i);
+      divideHeap(list, n, i);
     }
 
     for (int i = n - 1; i > 0; i--) {
       Collections.swap(list, i, 0);
-      heapify(list, i, 0);
+      divideHeap(list, i, 0);
     }
     return this;
   }
 
-  private void heapify(List<Ball> list, int n, int i) {
+  private void divideHeap(List<Ball> list, int n, int i) {
     int largest = i;
     int leftPartOfHeap = 2 * i ;
     int rightPartOfHeap = 2 * i + 1;
@@ -175,7 +176,7 @@ public class SortService {
 
     if (largest != i) {
       Collections.swap(list, i, largest);
-      heapify(list, n, largest);
+      divideHeap(list, n, largest);
     }
   }
 
