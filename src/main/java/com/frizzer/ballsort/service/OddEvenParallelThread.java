@@ -10,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 
 public class OddEvenParallelThread implements Runnable {
 
-  private static final Logger logger = LogManager.getLogger();
+  private final Logger logger = LogManager.getLogger();
   private final List<Ball> list;
   private final int index;
   private final CyclicBarrier barrier;

@@ -13,32 +13,32 @@ class QuickSortTest extends AbstractTest {
 
   @Test
   void testQuickSortBySize() {
-    List<Ball> balls = new ArrayList<>(ballsTestSet);
-    List<Ball> ballsSortedByJava = new ArrayList<>(ballsTestSet);
-    sortService.bySize().quickSort(balls);
-    ballsSortedByJava.sort(Comparator.comparing(Ball::getSize));
-    assertThat(balls.stream().map(Ball::getSize).toList(),
-        is(ballsSortedByJava.stream().map(Ball::getSize).toList()));
+    List<Ball> ballList = new ArrayList<>(ballTestSet);
+    List<Ball> ballListSortedByJava = new ArrayList<>(ballTestSet);
+    sortService.bySize().quickSort(ballList);
+    ballListSortedByJava.sort(Comparator.comparing(Ball::getSize));
+    assertThat(ballList.stream().map(Ball::getSize).toList(),
+        is(ballListSortedByJava.stream().map(Ball::getSize).toList()));
   }
 
   @Test
   void testQuickSortByColor() {
-    List<Ball> balls = new ArrayList<>(ballsTestSet);
-    List<Ball> ballsSortedByJava = new ArrayList<>(ballsTestSet);
-    sortService.byColor().quickSort(balls);
-    ballsSortedByJava.sort(Comparator.comparing(Ball::getColor));
-    assertThat(balls.stream().map(Ball::getColor).toList(),
-        is(ballsSortedByJava.stream().map(Ball::getColor).toList()));
+    List<Ball> ballList = new ArrayList<>(ballTestSet);
+    List<Ball> ballListSortedByJava = new ArrayList<>(ballTestSet);
+    sortService.byColor().quickSort(ballList);
+    ballListSortedByJava.sort(Comparator.comparing(Ball::getColor));
+    assertThat(ballList.stream().map(Ball::getColor).toList(),
+        is(ballListSortedByJava.stream().map(Ball::getColor).toList()));
   }
 
   @Test
   void testQuickSortByType() {
-    List<Ball> balls = new ArrayList<>(ballsTestSet);
-    List<Ball> ballsSortedByJava = new ArrayList<>(ballsTestSet);
-    sortService.byType().quickSort(balls);
-    ballsSortedByJava.sort(Comparator.comparing(Ball::getType));
-    assertThat(balls.stream().map(Ball::getType).toList(),
-        is(ballsSortedByJava.stream().map(Ball::getType).toList()));
+    List<Ball> ballList = new ArrayList<>(ballTestSet);
+    List<Ball> ballListSortedByJava = new ArrayList<>(ballTestSet);
+    sortService.byType().quickSort(ballList);
+    ballListSortedByJava.sort(Comparator.comparing(Ball::getType));
+    assertThat(ballList.stream().map(Ball::getType).toList(),
+        is(ballListSortedByJava.stream().map(Ball::getType).toList()));
   }
 
 }

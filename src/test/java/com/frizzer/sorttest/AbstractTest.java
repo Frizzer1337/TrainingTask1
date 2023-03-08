@@ -9,8 +9,7 @@ import java.util.List;
 public abstract class AbstractTest {
 
   static final SortService sortService = new SortService();
-  final List<Ball> ballsTestSet = List.of(
-      new BasketballBall[]{
+  final List<Ball> ballTestSet = List.of(
           new BasketballBall(12, new Color("red", "deep"))
           , new BasketballBall(11, new Color("red", "light"))
           , new BasketballBall(10, new Color("red", "deep"))
@@ -22,7 +21,7 @@ public abstract class AbstractTest {
           , new BasketballBall(10, new Color("green", "deep"))
           , new BasketballBall(11, new Color("black", "light"))
           , new BasketballBall(13, new Color("black", "deep"))
-          , new BasketballBall(11, new Color("black", "light"))}
+          , new BasketballBall(11, new Color("black", "light"))
   );
 
 }

@@ -14,7 +14,7 @@ import org.apache.logging.log4j.Logger;
 
 public class SortService {
 
-  private static final Logger logger = LogManager.getLogger();
+  private final Logger logger = LogManager.getLogger();
   private SortBy sortBy = SortBy.SIZE;
 
   public SortService bySize() {
@@ -162,15 +162,15 @@ public class SortService {
 
   private void heapify(List<Ball> list, int n, int i) {
     int largest = i;
-    int l = 2 * i + 1;
-    int r = 2 * i + 2;
+    int leftPartOfHeap = 2 * i ;
+    int rightPartOfHeap = 2 * i + 1;
 
-    if (l < n && compare(list.get(l), list.get(largest)) > 0) {
-      largest = l;
+    if (leftPartOfHeap < n && compare(list.get(leftPartOfHeap), list.get(largest)) > 0) {
+      largest = leftPartOfHeap;
     }
 
-    if (r < n && compare(list.get(r), list.get(largest)) > 0) {
-      largest = r;
+    if (rightPartOfHeap < n && compare(list.get(rightPartOfHeap), list.get(largest)) > 0) {
+      largest = rightPartOfHeap;
     }
 
     if (largest != i) {
