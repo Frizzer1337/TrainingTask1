@@ -2,9 +2,9 @@ package com.frizzer.ballsort;
 
 
 import com.frizzer.ballsort.entity.Ball;
-import com.frizzer.ballsort.entity.BasketballBall;
+import com.frizzer.ballsort.entity.ball.BasketballBall;
 import com.frizzer.ballsort.entity.Color;
-import com.frizzer.ballsort.entity.FootballBall;
+import com.frizzer.ballsort.entity.ball.FootballBall;
 import com.frizzer.ballsort.service.SortService;
 import java.util.ArrayList;
 import java.util.List;

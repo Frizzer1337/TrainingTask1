@@ -1,4 +1,8 @@
-package com.frizzer.ballsort.entity;
+package com.frizzer.ballsort.entity.ball;
+
+import com.frizzer.ballsort.entity.Ball;
+import com.frizzer.ballsort.entity.BallType;
+import com.frizzer.ballsort.entity.Color;
 
 public class FootballBall extends Ball {
 
