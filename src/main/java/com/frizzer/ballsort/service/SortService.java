@@ -28,39 +28,48 @@ public class SortService {
   }
 
   public SortService parallelOddEvenSort(List<Ball> list) {
-    preconditions(list);
-    new ParallelOddEvenSort().sort(list, sortBy);
+    if(preconditions(list)) {
+      new ParallelOddEvenSort().sort(list, sortBy);
+    }
     return this;
   }
 
   public SortService mergeSort(List<Ball> list) {
-    preconditions(list);
-    new MergeSort().sort(list, sortBy);
+    if(preconditions(list)) {
+      new MergeSort().sort(list, sortBy);
+    }
     return this;
   }
 
   public SortService quickSort(List<Ball> list) {
-    preconditions(list);
-    new QuickSort().sort(list, sortBy);
+    if(preconditions(list)) {
+      new QuickSort().sort(list, sortBy);
+    }
     return this;
   }
 
   public SortService heapSort(List<Ball> list) {
-    preconditions(list);
-    new HeapSort().sort(list, sortBy);
+    if(preconditions(list)) {
+      new HeapSort().sort(list, sortBy);
+    }
     return this;
   }
 
 
   public SortService oddEvenSort(List<Ball> list) {
-    preconditions(list);
-    new OddEvenSort().sort(list, sortBy);
+    if(preconditions(list)) {
+      new OddEvenSort().sort(list, sortBy);
+    }
     return this;
   }
 
-  private void preconditions(List<Ball> list) {
+  private boolean preconditions(List<Ball> list) {
+    boolean preconditions = true;
     if (list == null) {
       throw new IllegalArgumentException("Null is not allowed");
+    } else if (list.size() <= 1){
+      preconditions = false;
     }
+    return preconditions;
   }
 }

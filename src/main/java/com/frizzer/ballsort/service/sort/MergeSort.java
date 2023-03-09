@@ -10,7 +10,7 @@ public class MergeSort implements Sort {
 
   @Override
   public void sort(List<Ball> list, SortBy sortBy) {
-    mergeSortBody(list,sortBy);
+      mergeSortBody(list, sortBy);
   }
   private void mergeSortBody(List<Ball> list,SortBy sortBy) {
     List<Ball> left = new ArrayList<>();
